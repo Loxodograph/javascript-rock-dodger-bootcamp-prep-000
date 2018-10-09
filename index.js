@@ -133,7 +133,8 @@ function moveDodger(e) {
      e.preventDefault();
     e.stopPropagation();
     moveDodgerLeft();
-   } else if (e.which === RIGHT_ARROW) {
+   }
+   if (e.which === RIGHT_ARROW) {
      e.preventDefault();
     e.stopPropagation();
     moveDodgerRight();
@@ -147,7 +148,7 @@ function moveDodgerLeft() {
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
     
-     var left = 0
+     var left = positionToInteger(DODGER.style.left)
      function step() {
        DODGER.style.left = `${left - 4}px`
      }
